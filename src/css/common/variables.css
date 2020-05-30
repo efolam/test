@@ -1,0 +1,27 @@
+/* Colors */
+$mainColor: #222222;
+$secColor: #090909;
+$accentColor: #2780e3;
+$dangerColor: #ff0039;
+$warningColor: #ff7518;
+$successColor: #3fb618;
+
+/* Fonts */
+$mainFont: 'Roboto', Arial, sans-serif;
+$secondFont: 'Roboto Slab', Arial, sans-serif;
+
+/* Media queries */
+@custom-media --phone-small (min-width: 0px) and (max-width: 425px);
+@custom-media --phone-large (min-width: 426px) and (max-width: 640px);
+@custom-media --phone (min-width: 0px) and (max-width: 640px);
+
+@custom-media --tablet-small (min-width: 641px) and (max-width: 768px);
+@custom-media --tablet-large (min-width: 769px) and (max-width: 960px);
+@custom-media --tablet (min-width: 641px) and (max-width: 960px);
+
+@custom-media --mobile (min-width: 0px) and (max-width: 960px);
+
+@custom-media --desktop-small (min-width: 961px) and (max-width: 1110px);
+@custom-media --desktop-large (min-width: 1110px);
+
+@custom-media --desktop (min-width: 961px);

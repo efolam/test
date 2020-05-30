@@ -1,0 +1,25 @@
+.container {
+  max-width: 1110px;
+  width: 100%;
+  margin: 0 auto;
+
+  @media (--phone-small) {
+    max-width: 280px;
+  }
+
+  @media (--phone-large) {
+    max-width: 360px;
+  }
+
+  @media (--tablet-small) {
+    max-width: 580px;
+  }
+
+  @media (--tablet-large) {
+    max-width: 660px;
+  }
+
+  @media (--desktop-small) {
+    max-width: calc(100% - 60px);
+  }
+}
