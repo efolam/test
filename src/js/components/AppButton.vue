@@ -12,7 +12,7 @@ export default {
     danger: {
       type: Boolean,
       default: false
-    },
+    }
   }
 }
 </script>

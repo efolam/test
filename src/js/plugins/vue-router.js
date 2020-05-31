@@ -1,8 +1,8 @@
-import Vue from "vue"
-import VueRouter from "vue-router"
+import Vue from 'vue'
+import VueRouter from 'vue-router'
 
-import Home from "@pages/Home"
-import TaskGroups from "@pages/TaskGroups"
+import Home from '@pages/Home'
+import TaskGroups from '@pages/TaskGroups'
 
 Vue.use(VueRouter)
 

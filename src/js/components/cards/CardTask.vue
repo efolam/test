@@ -1,14 +1,16 @@
 <template>
-  <article class="card-task">
+  <article class="card-task" :class="{ 'card-task--done': data.status }">
     <header class="card-task__header">
       <div class="card-task__title">{{ data.title }}</div>
     </header>
 
     <section class="card-task__content">
-      <div class="card-task__status">
-        <div class="card-task__status-label">{{ data.status ? 'Выполнена' : 'Не выполнена'}}</div>
-        <div class="card-task__status-toggler"></div>
-      </div>
+      <app-checkbox
+        :value="data.status"
+        @click="updateTask({ id: data.id, status: !data.status })"
+      >
+        {{ data.status ? 'Выполнена' : 'Не выполнена'}}
+      </app-checkbox>
 
       <div class="card-task__group">{{ data.group }}</div>
 
@@ -30,13 +32,15 @@
     </section>
 
     <footer class="card-task__controls">
-      <app-button>Редактировать</app-button>
-      <app-button danger>Удалить</app-button>
+      <app-button @click="updateTask({ id: data.id, title: 'gdsfds' })">Редактировать</app-button>
+      <app-button danger @click="removeTask(data.id)">Удалить</app-button>
     </footer>
   </article>
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 export default {
   props: {
     data: Object
@@ -50,12 +54,17 @@ export default {
   },
 
   mounted() {
-    console.log(this.$refs.description.offsetHeight)
-
     if (this.$refs.description.offsetHeight > 74) {
       this.largeDescription = true
       this.lessDescription = true
     }
+  },
+
+  methods: {
+    ...mapMutations('tasks', [
+      'removeTask',
+      'updateTask'
+    ])
   }
 }
 </script>
@@ -65,6 +74,7 @@ export default {
 
 .card-task {
   border: 1px solid $accentColor;
+  transition: border-color .3s ease-out;
 
   &__header {
     padding: 20px;
@@ -72,6 +82,7 @@ export default {
     color: $lightColor;
     font-family: $secondFont;
     line-height: 22px;
+    transition: background-color .3s ease-out;
   }
 
   &__content {
@@ -117,6 +128,16 @@ export default {
     padding: 20px;
     display: flex;
     justify-content: space-between;
+  }
+
+  &--done {
+    border-color: $successColor;
+
+    .card-task {
+      &__header {
+        background-color: $successColor;
+      }
+    }
   }
 }
 </style>

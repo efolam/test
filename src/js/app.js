@@ -1,8 +1,8 @@
-import '../css/app'
+import '@/css/app'
 
 import Vue from 'vue'
-import router from './plugins/vue-router'
-import store from './plugins/vuex'
+import router from '@/js/plugins/vue-router'
+import store from '@/js/store'
 
 // Components
 import components from './components'
