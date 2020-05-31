@@ -1,25 +1,14 @@
 .container {
-  max-width: 1110px;
+  max-width: 960px;
   width: 100%;
   margin: 0 auto;
+  padding: 0 20px;
 
-  @media (--phone-small) {
-    max-width: 280px;
+  @media (--phone) {
+    max-width: 320px;
   }
 
-  @media (--phone-large) {
-    max-width: 360px;
-  }
-
-  @media (--tablet-small) {
+  @media (--tablet) {
     max-width: 580px;
-  }
-
-  @media (--tablet-large) {
-    max-width: 660px;
-  }
-
-  @media (--desktop-small) {
-    max-width: calc(100% - 60px);
   }
 }

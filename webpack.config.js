@@ -48,6 +48,7 @@ module.exports = {
     alias: {
       '@': path.resolve(__dirname, 'src'),
       '@pages': path.resolve(__dirname, 'src/js/pages'),
+      '@layouts': path.resolve(__dirname, 'src/js/layouts'),
       vue: 'vue/dist/vue.js'
     }
   },
@@ -87,7 +88,8 @@ module.exports = {
                 require('autoprefixer')(),
                 require('postcss-import')(),
                 require('postcss-url')(),
-                require('precss')()
+                require('precss')(),
+                require('postcss-rgb')()
               ]
             }
           }

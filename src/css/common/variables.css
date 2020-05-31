@@ -1,6 +1,9 @@
-/* Colors */
+/* Blocks Colors */
 $mainColor: #222222;
 $secColor: #090909;
+$lightColor: #fff;
+
+/* Common Colors */
 $accentColor: #2780e3;
 $dangerColor: #ff0039;
 $warningColor: #ff7518;
