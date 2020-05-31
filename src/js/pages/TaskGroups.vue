@@ -1,6 +1,6 @@
 <template>
   <layout>
-    Task Groups
+    <div class="page__title">Группы задач</div>
   </layout>
 </template>
 

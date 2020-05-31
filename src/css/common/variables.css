@@ -5,9 +5,13 @@ $lightColor: #fff;
 
 /* Common Colors */
 $accentColor: #2780e3;
+$hoverAccentColor: #1862b5;
 $dangerColor: #ff0039;
+$hoverDangerColor: #cc002e;
 $warningColor: #ff7518;
+$hoverWarningColor: #e45c00;
 $successColor: #3fb618;
+$hoverSuccessColor: #2f8912;
 
 /* Fonts */
 $mainFont: 'Roboto', Arial, sans-serif;

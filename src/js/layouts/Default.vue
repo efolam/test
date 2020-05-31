@@ -3,15 +3,13 @@
     <app-header>
       <app-navigation
         :links='[
-          { url: "/task-groups", label: "Все задания"}
+          { url: "/task-groups", label: "Группы задач"}
         ]'
       ></app-navigation>
     </app-header>
 
-    <main>
-      <div class="container">
-        <slot></slot>
-      </div>
+    <main class="page container">
+      <slot></slot>
     </main>
   </div>
 </template>
