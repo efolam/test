@@ -33,7 +33,10 @@
 
     <footer class="card-task__controls">
       <app-button
-        @click="updateTask({ id: data.id, title: 'gdsfds' })"
+        @click="$modal.show('edit-task', {
+          taskTitle: data.title,
+          task: data
+        })"
       >Редактировать</app-button>
 
       <app-button
@@ -66,6 +69,21 @@ export default {
     if (this.$refs.description.offsetHeight > 74) {
       this.largeDescription = true
       this.lessDescription = true
+    }
+  },
+
+  watch: {
+    data() {
+      this.lessDescription = false
+
+      setTimeout(() => {
+        if (this.$refs.description.offsetHeight > 74) {
+          this.largeDescription = true
+          this.lessDescription = true
+        } else {
+          this.largeDescription = false
+        }
+      }, 50);
     }
   },
 
