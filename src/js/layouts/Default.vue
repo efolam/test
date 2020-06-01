@@ -11,5 +11,8 @@
     <main class="page container">
       <slot></slot>
     </main>
+
+    <!-- Modals -->
+    <confirm-delete-task></confirm-delete-task>
   </div>
 </template>

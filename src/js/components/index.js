@@ -6,6 +6,9 @@ import AppNavigation from './AppNavigation'
 /* Cards */
 import CardTask from './cards/CardTask'
 
+/* Modals */
+import ConfirmDeleteTask from './modals/ConfirmDeleteTask'
+
 import Tasks from './Tasks'
 
 export default {
@@ -16,6 +19,9 @@ export default {
 
   /* Cards */
   CardTask,
+
+  /* Modals */
+  ConfirmDeleteTask,
 
   Tasks
 }

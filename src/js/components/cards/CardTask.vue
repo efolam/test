@@ -32,8 +32,17 @@
     </section>
 
     <footer class="card-task__controls">
-      <app-button @click="updateTask({ id: data.id, title: 'gdsfds' })">Редактировать</app-button>
-      <app-button danger @click="removeTask(data.id)">Удалить</app-button>
+      <app-button
+        @click="updateTask({ id: data.id, title: 'gdsfds' })"
+      >Редактировать</app-button>
+
+      <app-button
+        danger
+        @click="$modal.show('confirm-delete-task', {
+          taskId: data.id,
+          taskName: data.title
+        })"
+      >Удалить</app-button>
     </footer>
   </article>
 </template>
@@ -62,7 +71,6 @@ export default {
 
   methods: {
     ...mapMutations('tasks', [
-      'removeTask',
       'updateTask'
     ])
   }
