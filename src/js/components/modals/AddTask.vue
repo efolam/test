@@ -1,17 +1,17 @@
 <template>
   <modal
-    class="modal edit-task"
-    name="edit-task"
+    class="modal add-task"
+    name="add-task"
     width="100%"
     height="100%"
     @before-open="beforeOpen"
     ref="modal"
   >
-    <div class="modal__container" @click="$modal.hide('edit-task')">
+    <div class="modal__container" @click="$modal.hide('add-task')">
       <div class="modal__inner" @click.stop="modalInner()">
-        <span class="modal__close" @click="$modal.hide('edit-task')"></span>
+        <span class="modal__close" @click="$modal.hide('add-task')"></span>
 
-        <div class="modal__title edit-task__title">{{ params.taskTitle }}</div>
+        <div class="modal__title add-task__title">Создать задачу</div>
 
         <div class="field">
           <div class="field__label">Статус:</div>
@@ -44,11 +44,11 @@
         </div>
 
         <app-button
-          @click="$modal.hide('edit-task')"
+          @click="$modal.hide('add-task')"
         >Отмена</app-button>
 
         <app-button
-          @click="clickUpdateTask"
+          @click="clickAddTask"
         >Сохранить</app-button>
       </div>
     </div>
@@ -62,21 +62,25 @@ export default {
   data() {
     return {
       params: {},
-      task: {}
+      task: {
+        title: '',
+        status: false,
+        group: 'Group 1',
+        description: ''
+      }
     }
   },
 
   methods: {
     ...mapMutations('tasks', [
-      'updateTask'
+      'addTask'
     ]),
-    clickUpdateTask() {
-      this.updateTask(this.task)
-      this.$modal.hide('edit-task')
+    clickAddTask() {
+      this.addTask(this.task)
+      this.$modal.hide('add-task')
     },
     beforeOpen(event) {
       this.params = event.params || {}
-      this.task = { ...event.params.task } || {}
     },
     modalInner() {
       return
@@ -84,3 +88,4 @@ export default {
   }
 }
 </script>
+

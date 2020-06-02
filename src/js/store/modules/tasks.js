@@ -45,6 +45,17 @@ export default {
   },
 
   mutations: {
+    addTask(state, task) {
+      const newTask = task
+
+      console.log(task)
+
+      state.primaryKeyCount = state.primaryKeyCount + 1
+
+      newTask.id = state.primaryKeyCount
+
+      state.items.push(newTask)
+    },
     updateTask(state, newTaskData) {
       const taskId = state.items.findIndex(task => task.id == newTaskData.id)
       const updatedTask = { ...state.items[taskId], ...newTaskData }
@@ -52,9 +63,6 @@ export default {
     },
     removeTask(state, taskId) {
       state.items = remove(state.items, task => task.id != taskId)
-    },
-    incrementPrimaryKeyCount(state) {
-      state.primaryKeyCount++
     }
   }
 }

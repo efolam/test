@@ -22,8 +22,6 @@
           @click="$modal.hide('confirm-delete-task')"
         >Отмена</app-button>
 
-        <br>
-
         <app-button
           danger
           @click="removeTaskClick()"
@@ -70,7 +68,6 @@ export default {
   }
 
   &__message {
-    margin: 30px 0;
     text-align: center;
     line-height: 22px;
   }

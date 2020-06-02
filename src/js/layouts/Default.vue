@@ -14,6 +14,7 @@
 
     <!-- Modals -->
     <confirm-delete-task></confirm-delete-task>
+    <add-task></add-task>
     <edit-task></edit-task>
   </div>
 </template>

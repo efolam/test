@@ -12,6 +12,7 @@ import CardTask from './cards/CardTask'
 /* Modals */
 import ConfirmDeleteTask from './modals/ConfirmDeleteTask'
 import EditTask from './modals/EditTask'
+import AddTask from './modals/AddTask'
 
 import Tasks from './Tasks'
 
@@ -30,6 +31,7 @@ export default {
   /* Modals */
   ConfirmDeleteTask,
   EditTask,
+  AddTask,
 
   Tasks
 }

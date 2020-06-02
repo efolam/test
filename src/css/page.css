@@ -7,13 +7,18 @@
     padding-bottom: 50px;
   }
 
-  &__title {
+  &__header {
     margin-bottom: 50px;
-    font-size: 30px;
-    font-family: $secondFont;
+    display: flex;
+    justify-content: space-between;
 
     @media (--phone) {
       margin-bottom: 30px;
     }
+  }
+
+  &__title {
+    font-size: 30px;
+    font-family: $secondFont;
   }
 }
