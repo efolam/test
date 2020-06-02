@@ -1,6 +1,7 @@
 import AppButton from './AppButton'
 import AppInput from './AppInput'
 import AppTextarea from './AppTextarea'
+import AppSelect from './AppSelect'
 import AppCheckbox from './AppCheckbox'
 import AppHeader from './AppHeader'
 import AppNavigation from './AppNavigation'
@@ -19,6 +20,7 @@ export default {
   AppButton,
   AppInput,
   AppTextarea,
+  AppSelect,
   AppHeader,
   AppNavigation,
 

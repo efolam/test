@@ -8,10 +8,32 @@
           <div class="tasks__filters-label">По названию</div>
 
           <app-input
-            class="tasks__filters-name"
             :value="filters.name"
             @input="filters.name = $event"
           ></app-input>
+        </div>
+
+        <div class="tasks__filters-item">
+          <div class="tasks__filters-label">По статусу</div>
+
+          <app-select
+            :value="filters.status"
+            @select="filters.status = $event"
+            :options="[
+              {
+                value: 'all',
+                label: 'Все'
+              },
+              {
+                value: true,
+                label: 'Выполненные'
+              },
+              {
+                value: false,
+                label: 'Не выполненные'
+              }
+            ]"
+          ></app-select>
         </div>
       </div>
     </div>
@@ -33,7 +55,8 @@ export default {
   data() {
     return {
       filters: {
-        name: ''
+        name: '',
+        status: 'all'
       }
     }
   },
@@ -43,17 +66,27 @@ export default {
       tasks: state => state.items
     }),
     filteredTasks() {
-      return this.tasks.filter(task => {
-        if (this.filters.name == '') {
-          return true
-        }
+      let filtered = this.tasks
 
-        const regExp = new RegExp(this.filters.name, 'i')
+      if (this.filters.name != '') {
+        filtered = filtered.filter(task => {
+          const regExp = new RegExp(this.filters.name, 'i')
 
-        if (regExp.test(task.title)) {
-          return true
-        }
-      })
+          if (regExp.test(task.title)) {
+            return true
+          }
+        })
+      }
+
+      if (this.filters.status != 'all') {
+        filtered = filtered.filter(task => {
+          if (this.filters.status == task.status) {
+            return true
+          }
+        })
+      }
+
+      return filtered
     }
   }
 }
@@ -64,13 +97,15 @@ export default {
   &__filters {
     margin-bottom: 40px;
 
+    &-items {
+      display: grid;
+      grid-template-columns: repeat(2, 200px);
+      grid-column-gap: 40px;
+    }
+
     &-title {
       font-size: 20px;
       margin-bottom: 20px;
-    }
-
-    &-name {
-      width: 200px;
     }
   }
 
