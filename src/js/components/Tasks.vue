@@ -93,6 +93,8 @@ export default {
 </script>
 
 <style lang="postcss">
+@import '../../css/common/variables.css';
+
 .tasks {
   &__filters {
     margin-bottom: 40px;
