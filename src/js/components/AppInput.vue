@@ -18,7 +18,7 @@ export default {
 
 .input {
   width: 100%;
-  height: 48px;
+  height: 40px;
   padding: 0 12px;
   line-height: 24px;
   outline: none;

@@ -26,7 +26,7 @@
 
         <app-input
           :value="task.title"
-          @input="updateTitle"
+          @input="task.title = $event"
           placeholder="Название задачи"
         ></app-input>
 
@@ -34,7 +34,7 @@
 
         <app-textarea
           :value="task.description"
-          @input="updateDescription"
+          @input="task.description = $event"
         ></app-textarea>
 
         <br>
@@ -68,12 +68,6 @@ export default {
     ...mapMutations('tasks', [
       'updateTask'
     ]),
-    updateTitle(event) {
-      this.task.title = event
-    },
-    updateDescription(event) {
-      this.task.description = event
-    },
     clickUpdateTask() {
       this.updateTask(this.task)
       this.$modal.hide('edit-task')

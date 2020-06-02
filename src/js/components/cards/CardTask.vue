@@ -72,8 +72,14 @@ export default {
     }
   },
 
+  computed: {
+    description() {
+      return this.data.description
+    }
+  },
+
   watch: {
-    data() {
+    description() {
       this.lessDescription = false
 
       setTimeout(() => {
