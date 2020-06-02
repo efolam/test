@@ -11,10 +11,13 @@
 @import '../../css/common/variables.css';
 
 .header {
+  width: 100vw;
   height: 50px;
-  background-color: $mainColor;
   display: flex;
   align-items: center;
+  position: fixed;
+  z-index: 1000;
+  background-color: $mainColor;
 
   &__container {
     width: 100%;
