@@ -13,7 +13,7 @@
   "browserslist": "> 0.25%, not dead",
   "dependencies": {
     "@babel/polyfill": "^7.10.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "normalize.css": "^8.0.1",
     "vue": "^2.6.11",
     "vue-js-modal": "^2.0.0-rc.3",
